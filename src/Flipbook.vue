@@ -29,6 +29,7 @@
       @pointercancel="onPointerUp"
       @mouseup="onMouseUp"
       @wheel="onWheel"
+      @dblclick="onDblclick"
     >
       <div class="flipbook-container" :style="{ transform: `scale(${zoom})` }">
         <div
@@ -725,6 +726,8 @@ export default
           @flip.progress = -x / @pageWidth
           @flip.progress = 1 if @flip.progress > 1
       true
+    
+    onDblclick: (touch) -> console.log('tooooo', touch)
 
     swipeEnd: (touch) ->
       return unless @touchStartX?
